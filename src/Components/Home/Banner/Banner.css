@@ -1,0 +1,22 @@
+.banner-image{
+    background-image: url(../../../Pictures/bannerbackground.png);
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 63%;
+    height: 75vh;
+}
+
+.from-design{
+    border:none;
+    height: 55px;
+    
+}
+.search-box{
+    position: relative;
+}
+.search-btn{
+    position: absolute;
+    right: 2px;
+    height: 100%;
+}
