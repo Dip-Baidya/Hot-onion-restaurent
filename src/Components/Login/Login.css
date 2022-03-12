@@ -1,0 +1,8 @@
+.Login-banner-image{
+    background-image: url(../../../Pictures/bannerbackground.png);
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 63%;
+    height: 75vh;
+}

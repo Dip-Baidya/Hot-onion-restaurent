@@ -5,8 +5,8 @@ const Banner = () => {
     return (
         <section className="banner-image d-flex justify-content-center align-items-center">
             <div className="container">
-                <div className="">
-                    <h1>Best Food Waiting  for your Belly</h1>
+                <div >
+                    <h1 className="banner-h1">Best Food Waiting  for your Belly</h1>
 
                     <div className="d-flex search-box col-md-6 mx-auto mt-4">
                         

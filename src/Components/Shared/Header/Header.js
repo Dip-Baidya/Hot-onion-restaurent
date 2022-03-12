@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../../../Pictures/logo.png';
+import { NavLink } from 'react-router-dom';
+import logo from '../../../Pictures/logo2.png';
 import './Header.css';
 
 
@@ -8,9 +9,11 @@ const Header = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container">
-                    <a className="navbar-brand" href="#">
-                        <img src={logo} alt="Onion Logo" height="50px" />
-                    </a>
+                    <NavLink to="/home">
+                        <a className="navbar-brand">
+                            <img src={logo} alt="Onion Logo" height="50px" />
+                        </a>
+                    </NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -22,12 +25,16 @@ const Header = () => {
                                 </a>
                             </li>
                             <li className="nav-item ps-3 pe-3">
-                                <a className="nav-link navbar-font-size" href="#">Login</a>
+                                <NavLink to="/login">
+                                    <a className="nav-link navbar-font-size">Login</a>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    <button className="btn btn-danger btn-rounded">Sign Up</button>
-                                </a>
+                                <NavLink to="/login">
+                                    <a className="nav-link">
+                                        <button className="btn btn-danger btn-rounded">Sign Up</button>
+                                    </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
