@@ -5,6 +5,6 @@ const firebaseConfig = {
     storageBucket: "red-onion-restaurant-b498f.appspot.com",
     messagingSenderId: "1048175589680",
     appId: "1:1048175589680:web:c2deaed2fb145cbecdb0f5"
-};
+  };
 
 export default firebaseConfig;
