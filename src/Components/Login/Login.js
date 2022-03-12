@@ -18,9 +18,10 @@ const Login = () => {
                     <div className="form-group mt-3">
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password" />
                     </div>
-                   
 
-                    <button type="submit" className="btn btn-primary mt-3">Submit</button>
+
+                    <button type="submit" className="btn btn-primary mt-3">Sign Up</button>
+                    <button className="btn btn-success mt-3 ms-5">Google Sign In</button>
                 </form>
             </div>
         </div>
