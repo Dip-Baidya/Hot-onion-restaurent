@@ -30,22 +30,25 @@ const Header = () => {
                                 <a className="nav-link">
                                     <button className="btn btn-danger btn-rounded" onClick={logOut}>Log Out</button>
                                 </a> :
-                                <li className="nav-item ps-3 pe-3">
-                                    <NavLink to="/login">
-                                        <a className="nav-link navbar-font-size">Login</a>
-                                    </NavLink>
-                                </li>
+                                <>
+                                    <li className="nav-item ps-3 pe-3">
+                                        <NavLink to="/login">
+                                            <a className="nav-link navbar-font-size">Login</a>
+                                        </NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/login">
+                                            <a className="nav-link">
+                                                <button className="btn btn-danger btn-rounded">Sign Up</button>
+                                            </a>
+                                        </NavLink>
+                                    </li>
+                                </>
                             }
+
                             <li className="nav-item">
-                                <NavLink to="/login">
-                                    <a className="nav-link">
-                                        <button className="btn btn-danger btn-rounded">Sign Up</button>
-                                    </a>
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to="/login">
-                                    <a className="nav-link navbar-font-size">Sign As: {user?.displayName}</a>
+                                <NavLink to="">
+                                    <a className="nav-link navbar-font-size">{user?.displayName}</a>
                                 </NavLink>
                             </li>
                         </ul>
