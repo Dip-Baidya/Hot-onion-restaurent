@@ -4,12 +4,13 @@ import useAuth from '../../Hooks/useAuth';
 import './Login.css'
 
 const Login = (props) => {
-    const { signInUsingGoogle } = useAuth();
-
+    const { signInUsingGoogle, user } = useAuth();
+    
 
     return (
         <div className="Login-banner-image">
             <div className="container">
+               
                 <form>
                     <div className="form-group mt-5">
                         <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" />
@@ -29,8 +30,9 @@ const Login = (props) => {
 
 
                     <button type="submit" className="btn btn-primary mt-3">Sign Up</button>
-                    <button onClick={signInUsingGoogle} className="btn btn-warning mt-3 ms-3" >Google Sign In</button>
+                    
                 </form>
+                <button onClick={signInUsingGoogle} className="btn btn-warning mt-3 ms-3" >Google Sign In</button>
             </div>
         </div>
     );

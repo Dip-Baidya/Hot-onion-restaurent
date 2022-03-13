@@ -45,7 +45,7 @@ const Header = () => {
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/login">
-                                    <a className="nav-link">Sign As: {user?.displayName}</a>
+                                    <a className="nav-link navbar-font-size">Sign As: {user?.displayName}</a>
                                 </NavLink>
                             </li>
                         </ul>
