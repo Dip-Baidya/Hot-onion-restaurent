@@ -1,5 +1,5 @@
 # Red Onion
-### [Live Site](https://red-onion-simple-restaurant.web.app/) 
+### [Live Site]() 
 This is a complete e-commerce MERN Stack project. Inspire from **Amazon**. I just try to make this website based on biggest e-commerce giant amazon with simple features.
 
 # Features 
@@ -7,17 +7,12 @@ This is a complete e-commerce MERN Stack project. Inspire from **Amazon**. I jus
 - Select product to add card
 - Login with Google Or Manual
 - Check order Review & History 
-- Add payment through Stripe 
 
 # Key Technology 
 - React 
 - React Router
 - React Hooks
-- Bootstrap 4
+- Bootstrap 5
 - Firebase Authentication
 - Firebase Hosting
-- Stripe Payment
-- Express
-- MongoDB
 
-**Backend Repo:** [Red Onion](https://github.com/mdmaruf43/red-onion-server)
