@@ -29,7 +29,7 @@ const Login = (props) => {
                         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Confirm Password" required />
                     </div> */}
                     <p className="text-danger">{error}</p>
-                    <button type="submit" className="btn btn-primary mt-3  w-25 ms-3">Sign Up</button>
+                    <button type="submit" className="btn btn-danger mt-3  w-25 ms-3">Sign Up</button>
 
                 </form>
 
