@@ -32,7 +32,7 @@ const Login = () => {
 
                     <div className="text-center mt-2">
                         <NavLink to="/register">
-                            <a className="text-danger btn" >Create A New Account</a>
+                            <a className="text-danger btn" >Red Onion Restaurant? Create A New Account</a>
                         </NavLink>
                     </div>
 
