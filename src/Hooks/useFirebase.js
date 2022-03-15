@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Components/Firebase/firebase.init";
 
@@ -32,14 +32,57 @@ const useFirebase = () => {
     const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                setUser(result.user);
-                setError(' ');
+                const user = result.user;
+                setUserName();
+                verifyEmail();
+                setError('');
 
             })
             .catch((error) => {
                 setError(error.message);
             });
     }
+
+    const processLogin = (email, password) => {
+        signInWithEmailAndPassword(auth, email, password)
+            .then((result) => {
+                const user = result.user;
+                setError('');
+
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    }
+
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then((result) => {
+                console.log(result);
+            });
+    }
+    const handleResetPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+            })
+            .catch((error) => {
+                setError(error.message);
+                // ..
+            });
+    }
+
+    const setUserName = () => {
+        updateProfile(auth.currentUser, {
+          displayName: name})
+            .then((result) => {
+            setUser(result);
+          })
+            .catch((error) => {
+            console.log(error.message);
+          });
+      }
 
 
 
@@ -95,10 +138,12 @@ const useFirebase = () => {
         error,
         logOut,
         handleRegistration,
+        processLogin,
         registerNewUser,
         handleNameChange,
         handleEmailChange,
         handlePasswordChange,
+        handleResetPassword,
     }
 }
 export default useFirebase;

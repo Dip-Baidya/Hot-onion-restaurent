@@ -9,9 +9,9 @@ const Register = () => {
             <div className="container text-center">
 
                 <form onClick={handleRegistration}>
-                    {/* <div className="form-group mt-5">
-                        <input onChange={handleNameChange} type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" required />
-                    </div> */}
+                    <div className="form-group mt-5">
+                        <input onBlur={handleNameChange} type="text" className="form-control" placeholder="Name" required />
+                    </div>
 
                     <div className="form-group mt-3">
                         <input onBlur={handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />

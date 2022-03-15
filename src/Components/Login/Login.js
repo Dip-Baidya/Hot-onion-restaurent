@@ -8,15 +8,15 @@ import { NavLink } from 'react-router-dom';
 import './Login.css'
 
 const Login = () => {
-    const { signInUsingGoogle, handleEmailChange, handlePasswordChange, error, } = useAuth();
+    const { signInUsingGoogle, handleEmailChange, handlePasswordChange, error, processLogin, handleResetPassword } = useAuth();
 
     return (
 
         <div className="Login-banner-image ">
             <div className="container text-center">
 
-                <form >
-                   
+                <form onClick={processLogin}>
+
                     <div className="form-group mt-3">
                         <input onBlur={handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />
                     </div>
@@ -28,6 +28,7 @@ const Login = () => {
                     <p className="text-danger">{error}</p>
 
                     <button type="submit" className="btn btn-danger mt-3  w-25 ms-3">Log In</button>
+                    <button onClick={handleResetPassword} type="submit" className="btn btn-primary mt-3  w-25 ms-3">Reset Password</button>
 
                     <div className="text-center mt-2">
                         <NavLink to="/register">
