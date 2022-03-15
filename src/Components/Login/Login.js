@@ -2,21 +2,21 @@ import React from 'react';
 
 import useAuth from '../../Hooks/useAuth';
 
+import { NavLink } from 'react-router-dom';
+
+
 import './Login.css'
 
-const Login = (props) => {
-    const { signInUsingGoogle, handleNameChange, handleEmailChange, handlePasswordChange, registerNewUser, error } = useAuth();
+const Login = () => {
+    const { signInUsingGoogle, handleEmailChange, handlePasswordChange, error, } = useAuth();
 
     return (
 
         <div className="Login-banner-image ">
             <div className="container text-center">
 
-                <form onClick={registerNewUser}>
-                    {/* <div className="form-group mt-5">
-                        <input onChange={handleNameChange} type="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" required />
-                    </div> */}
-
+                <form >
+                   
                     <div className="form-group mt-3">
                         <input onBlur={handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required />
                     </div>
@@ -25,11 +25,15 @@ const Login = (props) => {
                         <input onBlur={handlePasswordChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" required />
                     </div>
 
-                    {/* <div className="form-group mt-3">
-                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Confirm Password" required />
-                    </div> */}
                     <p className="text-danger">{error}</p>
-                    <button type="submit" className="btn btn-danger mt-3  w-25 ms-3">Sign Up</button>
+
+                    <button type="submit" className="btn btn-danger mt-3  w-25 ms-3">Log In</button>
+
+                    <div className="text-center mt-2">
+                        <NavLink to="/register">
+                            <a className="text-danger btn" >Create A New Account</a>
+                        </NavLink>
+                    </div>
 
                 </form>
 

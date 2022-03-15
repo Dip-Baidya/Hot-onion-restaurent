@@ -11,6 +11,7 @@ import {
 import Login from './Components/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import NotFound from './Components/NotFound/NotFound';
+import Register from './Components/Login/Register/Register';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

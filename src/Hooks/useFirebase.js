@@ -11,11 +11,10 @@ const useFirebase = () => {
     const [name, setName] = useState(' ');
     const [email, setEmail] = useState(' ');
     const [password, setPassword] = useState(' ');
-    // console.log(name, email, password);
 
     const auth = getAuth();
 
-    const registerNewUser = (event) => {
+    const handleRegistration = (event) => {
         event.preventDefault();
 
         if (password.length < 6) {
@@ -27,7 +26,10 @@ const useFirebase = () => {
             setError('Password must be contain 2 Upper Case');
             return;
         }
+        registerNewUser(email, password);
+    }
 
+    const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
@@ -37,8 +39,8 @@ const useFirebase = () => {
             .catch((error) => {
                 setError(error.message);
             });
-
     }
+
 
 
     const handleNameChange = (event) => {
@@ -50,7 +52,6 @@ const useFirebase = () => {
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     }
-
 
     const signInUsingGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
@@ -69,7 +70,8 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-            } else {
+            }
+            else {
                 setUser({});
             }
         });
@@ -92,10 +94,11 @@ const useFirebase = () => {
         signInUsingGoogle,
         error,
         logOut,
+        handleRegistration,
         registerNewUser,
         handleNameChange,
         handleEmailChange,
-        handlePasswordChange
+        handlePasswordChange,
     }
 }
 export default useFirebase;
