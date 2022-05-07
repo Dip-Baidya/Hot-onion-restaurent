@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom text d-flex justify-content-between">
-                    <small className="mb-5">Copyright &copy;  2022 Red Onion</small>
+                    <small className="mb-5">Copyright &copy;  2022 Dip Baidya</small>
                     <div className="d-flex mb-5">
                         <p className="me-5">Privacy Policy</p>
                         <p className="me-5">Terms of Use</p>
